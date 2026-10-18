@@ -1,0 +1,162 @@
+{
+  "message": "我们必须把澄星协作私有化部署在自己的服务器上。Basic、Team、Business里哪个套餐能满足？另外Team支持API吗？请依据资料说明。",
+  "candidate": {
+    "intent": "selection",
+    "add": [
+      {
+        "statement": "必须支持私有化部署到客户自己的服务器",
+        "user_quote": "我们必须把澄星协作私有化部署在自己的服务器上。",
+        "kind": "feature",
+        "feature_id": "private_deployment"
+      }
+    ],
+    "consultations": [
+      {
+        "item_id": "c1",
+        "aspect": "support",
+        "plan_ids": [
+          "team"
+        ],
+        "all_plans": false,
+        "feature_id": "api_access",
+        "topic": "Team 是否支持产品 API",
+        "span": {
+          "quote": "另外Team支持API吗？"
+        }
+      }
+    ]
+  },
+  "review": {
+    "intent": "selection",
+    "target": {
+      "kind": "selection",
+      "relation": "new",
+      "task_id": null,
+      "copy_from": null,
+      "reuse_fields": [],
+      "span": {
+        "quote": "我们必须把澄星协作私有化部署在自己的服务器上。Basic、Team、Business里哪个套餐能满足？",
+        "start": null,
+        "end": null
+      }
+    },
+    "coverage_complete": true,
+    "groups": [
+      {
+        "group_id": "g1",
+        "depends_on": [],
+        "verdict": "accept",
+        "reason": "confirmed",
+        "operations": [
+          {
+            "action": "add",
+            "field": null,
+            "value": null,
+            "requirement_id": null,
+            "requirement": {
+              "statement": "必须支持私有化部署到客户自己的服务器",
+              "user_quote": "我们必须把澄星协作私有化部署在自己的服务器上。",
+              "kind": "feature",
+              "feature_id": "private_deployment"
+            },
+            "span": {
+              "quote": "我们必须把澄星协作私有化部署在自己的服务器上。",
+              "start": null,
+              "end": null
+            },
+            "speech_act": "assertion",
+            "certainty": "certain",
+            "time_scope": "unspecified"
+          }
+        ]
+      }
+    ],
+    "consultations": [
+      {
+        "item_id": "c1",
+        "aspect": "support",
+        "plan_ids": [
+          "basic",
+          "team",
+          "business"
+        ],
+        "all_plans": false,
+        "feature_id": "private_deployment",
+        "topic": "Basic、Team、Business 中哪个套餐能满足私有化部署要求",
+        "span": {
+          "quote": "Basic、Team、Business里哪个套餐能满足？",
+          "start": null,
+          "end": null
+        },
+        "reference_span": null,
+        "scope_basis": {
+          "kind": "named",
+          "span": {
+            "quote": "Basic、Team、Business里哪个套餐能满足？",
+            "start": null,
+            "end": null
+          }
+        },
+        "scope_exclusions": [],
+        "depends_on": []
+      },
+      {
+        "item_id": "c2",
+        "aspect": "support",
+        "plan_ids": [
+          "team"
+        ],
+        "all_plans": false,
+        "feature_id": "api_access",
+        "topic": "Team 是否支持产品 API",
+        "span": {
+          "quote": "另外Team支持API吗？",
+          "start": null,
+          "end": null
+        },
+        "reference_span": null,
+        "scope_basis": {
+          "kind": "named",
+          "span": {
+            "quote": "另外Team支持API吗？",
+            "start": null,
+            "end": null
+          }
+        },
+        "scope_exclusions": [],
+        "depends_on": []
+      },
+      {
+        "item_id": "c3",
+        "aspect": "detail",
+        "plan_ids": [
+          "basic",
+          "team",
+          "business"
+        ],
+        "all_plans": false,
+        "feature_id": null,
+        "topic": "要求依据资料说明上述套餐能力结论的来源",
+        "span": {
+          "quote": "请依据资料说明。",
+          "start": null,
+          "end": null
+        },
+        "reference_span": null,
+        "scope_basis": {
+          "kind": "named",
+          "span": {
+            "quote": "Basic、Team、Business里哪个套餐能满足？",
+            "start": null,
+            "end": null
+          }
+        },
+        "scope_exclusions": [],
+        "depends_on": []
+      }
+    ],
+    "consultation_coverage_complete": true,
+    "quote_id": null,
+    "quote_ids": []
+  }
+}

@@ -1,0 +1,4 @@
+# Preserve formal resources that are validated against the knowledge index.
+/app/data/catalog.json -text
+/app/data/knowledge/** -text
+/data/vector_store/chengxing_index.json -text
