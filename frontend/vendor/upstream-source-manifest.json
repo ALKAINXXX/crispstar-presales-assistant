@@ -1,0 +1,62 @@
+[
+  {
+    "upstream_path": "templates/default/app/assistant.tsx",
+    "commit": "3542d602272a62eddeb8989befc910841c267022",
+    "sha256": "f96caee80e83c536c8754a8954f453dfa67007cc4eab99747ce3f3a820b975c5"
+  },
+  {
+    "upstream_path": "templates/default/app/globals.css",
+    "commit": "3542d602272a62eddeb8989befc910841c267022",
+    "sha256": "775972c60ff85b1457af3981914c068c2dca46548c4701ee1428b23dc86e2b51"
+  },
+  {
+    "upstream_path": "packages/react/package.json",
+    "commit": "3542d602272a62eddeb8989befc910841c267022",
+    "sha256": "83400f0e743bc54d6104b4f47b6df40ad34ed8e972282467db85f2a0ece5c4eb"
+  },
+  {
+    "upstream_path": "packages/react-markdown/package.json",
+    "commit": "3542d602272a62eddeb8989befc910841c267022",
+    "sha256": "991bc5031969459e64202c2ac7bfa96ed1013ee12ffe7c0e3ef131d256997d8b"
+  },
+  {
+    "upstream_path": "apps/registry/src/registry.ts",
+    "commit": "3542d602272a62eddeb8989befc910841c267022",
+    "sha256": "955922075b2571011c1f903fff903c245624bab49857804b88e7feb270a3e7bc"
+  },
+  {
+    "upstream_path": "packages/ui/src/components/react/assistant-ui/elements/thread.aui.tsx",
+    "commit": "3542d602272a62eddeb8989befc910841c267022",
+    "sha256": "64cb85b4076644dd319325b319264ec8e998e619a97c19e0f001d3fa5a03a016"
+  },
+  {
+    "upstream_path": "packages/ui/src/components/react/assistant-ui/elements/thread-list.aui.tsx",
+    "commit": "3542d602272a62eddeb8989befc910841c267022",
+    "sha256": "0d0bf30eef4d96e076df5c85915cd2ef92067178579a48be33b70ab904fab4cf"
+  },
+  {
+    "upstream_path": "packages/ui/src/components/react/assistant-ui/elements/threadlist-sidebar.aui.tsx",
+    "commit": "3542d602272a62eddeb8989befc910841c267022",
+    "sha256": "d75df1f643df5fd6e250639e51ede972e4cca019de36d2f28d2632b742649fa3"
+  },
+  {
+    "upstream_path": "packages/ui/src/components/react/assistant-ui/elements/data-table.tsx",
+    "commit": "3542d602272a62eddeb8989befc910841c267022",
+    "sha256": "07bcbe53df4ccea3a9c3a3dd4fa90446f4e8881c90c9807f1b5a71f831abb4e7"
+  },
+  {
+    "upstream_path": "packages/ui/src/components/react/assistant-ui/elements/sources.tsx",
+    "commit": "3542d602272a62eddeb8989befc910841c267022",
+    "sha256": "0fc3f82dbfed9a9e16c12de287a33564c1b7267dd4e218794fb9ccddc04e7391"
+  },
+  {
+    "upstream_path": "packages/ui/src/components/react/assistant-ui/elements/spec-sheet.tsx",
+    "commit": "3542d602272a62eddeb8989befc910841c267022",
+    "sha256": "fb9a91f8fffdc65090c122d10fcb0517fd09e69dae9f5dad1df33965798df408"
+  },
+  {
+    "upstream_path": "packages/ui/src/components/react/assistant-ui/elements/surfaces.tsx",
+    "commit": "3542d602272a62eddeb8989befc910841c267022",
+    "sha256": "a82542ec08f0afd0565b220a1d32235b1fd7c08b394c55977119665da3860d3a"
+  }
+]

@@ -1,0 +1,34 @@
+use-composed-ref@1.4.0 — reviewed license-declaration exception
+
+The exact npm package and its published source revision contain no separate
+LICENSE/COPYING file. The upstream package.json declares "license": "MIT".
+Its README has only the project name and description; package.json supplies no
+author/contributors field. No copyright holder or year is invented here.
+
+Official source package.json:
+https://raw.githubusercontent.com/Andarist/use-composed-ref/ea2c9d969f2f90a349f4c99338b806423824cea2/package.json
+Published npm gitHead: ea2c9d969f2f90a349f4c99338b806423824cea2
+The unmodified source metadata is preserved alongside this notice as
+use-composed-ref-1.4.0-package.json. This notice is a local record of the upstream
+MIT declaration plus the standard MIT terms below. It is not presented as an
+upstream-provided license file or a newly obtained copyright notice.
+
+MIT License — standard terms corresponding to the declared SPDX identifier
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

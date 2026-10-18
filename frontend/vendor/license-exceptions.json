@@ -1,0 +1,11 @@
+{
+  "use-composed-ref@1.4.0": {
+    "package_json_sha256": "f1bb61c939b089aa90f631b513f14c7d2eaff3093395634365243127f2ba8547",
+    "notice": "vendor/licenses/use-composed-ref-1.4.0-NOTICE.txt",
+    "notice_sha256": "a26e15f34c614ee3e730319d1185f2b43178551c8149fab3bc19455d16d16b9a",
+    "source": "https://raw.githubusercontent.com/Andarist/use-composed-ref/ea2c9d969f2f90a349f4c99338b806423824cea2/package.json",
+    "reason": "Exact-version upstream MIT declaration; npm package and fixed source revision provide no separate license text or copyright notice.",
+    "upstream_metadata": "vendor/licenses/use-composed-ref-1.4.0-package.json",
+    "upstream_metadata_sha256": "f1bb61c939b089aa90f631b513f14c7d2eaff3093395634365243127f2ba8547"
+  }
+}
