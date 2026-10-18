@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "version": "chengxing-demo-v1",
+  "product_id": "chengxing_collab",
+  "documents": [
+    {
+      "document_id": "product_overview",
+      "file": "01_overview.md",
+      "title": "澄星协作的用途与套餐阅读方法",
+      "sections": [
+        {"section_id": "overview_identity", "title": "产品身份与资料用途", "plan_ids": [], "feature_ids": [], "condition_ids": []},
+        {"section_id": "overview_needs", "title": "从协作目的形成明确需求", "plan_ids": ["basic", "team", "business"], "feature_ids": ["project_collaboration", "basic_roles", "data_export"], "condition_ids": []},
+        {"section_id": "overview_plans", "title": "三档套餐的能力层次", "plan_ids": ["basic", "team", "business"], "feature_ids": ["project_collaboration", "basic_roles", "data_export", "api_access", "webhook_notifications", "saml_sso", "audit_logs", "private_deployment"], "condition_ids": []},
+        {"section_id": "overview_applicability", "title": "支持记录与客户适用性", "plan_ids": ["basic", "team", "business"], "feature_ids": [], "condition_ids": []}
+      ]
+    },
+    {
+      "document_id": "basic_capabilities",
+      "file": "02_capabilities.md",
+      "title": "基础协作能力的含义与限制",
+      "sections": [
+        {"section_id": "capabilities_collaboration", "title": "任务与项目协作", "plan_ids": ["basic", "team", "business"], "feature_ids": ["project_collaboration"], "condition_ids": []},
+        {"section_id": "capabilities_roles", "title": "基础成员角色", "plan_ids": ["basic", "team", "business"], "feature_ids": ["basic_roles"], "condition_ids": []},
+        {"section_id": "capabilities_export", "title": "协作数据导出", "plan_ids": ["basic", "team", "business"], "feature_ids": ["data_export", "api_access", "webhook_notifications"], "condition_ids": []},
+        {"section_id": "capabilities_limits", "title": "能力名称的解释边界", "plan_ids": [], "feature_ids": ["basic_roles", "data_export", "saml_sso"], "condition_ids": []}
+      ]
+    },
+    {
+      "document_id": "api_webhook",
+      "file": "03_api_webhook.md",
+      "title": "产品 API 与 Webhook 的集成说明",
+      "sections": [
+        {"section_id": "integration_api", "title": "产品 API 的适用范围", "plan_ids": ["basic", "team", "business"], "feature_ids": ["api_access"], "condition_ids": []},
+        {"section_id": "integration_webhook", "title": "Webhook 通知的适用范围", "plan_ids": ["basic", "team", "business"], "feature_ids": ["webhook_notifications"], "condition_ids": []},
+        {"section_id": "integration_distinction", "title": "API 与通知承担不同用途", "plan_ids": ["basic", "team", "business"], "feature_ids": ["api_access", "webhook_notifications"], "condition_ids": []},
+        {"section_id": "integration_ambiguity", "title": "含糊的系统对接要求", "plan_ids": ["basic", "team", "business"], "feature_ids": ["api_access", "webhook_notifications", "data_export"], "condition_ids": []}
+      ]
+    },
+    {
+      "document_id": "saml_sso",
+      "file": "04_saml_sso.md",
+      "title": "SAML SSO 的前提与配置概念",
+      "sections": [
+        {"section_id": "sso_prerequisite", "title": "企业版 SSO 的唯一适用前提", "plan_ids": ["business"], "feature_ids": ["saml_sso"], "condition_ids": ["saml_sso_compatible_idp"]},
+        {"section_id": "sso_concept", "title": "统一登录的概念范围", "plan_ids": ["basic", "team", "business"], "feature_ids": ["saml_sso"], "condition_ids": []},
+        {"section_id": "sso_configuration", "title": "管理员配置与购买前提", "plan_ids": ["business"], "feature_ids": ["saml_sso"], "condition_ids": []},
+        {"section_id": "sso_evidence", "title": "条件资料与用户事实的区别", "plan_ids": ["basic", "team", "business"], "feature_ids": ["saml_sso"], "condition_ids": []}
+      ]
+    },
+    {
+      "document_id": "audit_export",
+      "file": "05_audit_export.md",
+      "title": "审计日志与数据导出的区别",
+      "sections": [
+        {"section_id": "audit_scope", "title": "审计日志的套餐范围", "plan_ids": ["basic", "team", "business"], "feature_ids": ["audit_logs", "saml_sso"], "condition_ids": []},
+        {"section_id": "audit_compliance", "title": "审计能力与合规承诺", "plan_ids": ["basic", "team", "business"], "feature_ids": ["audit_logs"], "condition_ids": []},
+        {"section_id": "audit_export_distinction", "title": "导出能力不等于审计覆盖", "plan_ids": ["basic", "team", "business"], "feature_ids": ["audit_logs", "data_export"], "condition_ids": []},
+        {"section_id": "export_details", "title": "导出细节需要独立依据", "plan_ids": ["basic", "team", "business"], "feature_ids": ["data_export", "audit_logs"], "condition_ids": []}
+      ]
+    },
+    {
+      "document_id": "boundaries_faq",
+      "file": "06_boundaries_faq.md",
+      "title": "产品边界与常见问题",
+      "sections": [
+        {"section_id": "boundary_private_deployment", "title": "私有化部署要求如何处理", "plan_ids": ["basic", "team", "business"], "feature_ids": ["private_deployment"], "condition_ids": []},
+        {"section_id": "boundary_unknown", "title": "目录外功能为何保留未知", "plan_ids": ["basic", "team", "business"], "feature_ids": ["saml_sso", "audit_logs"], "condition_ids": []},
+        {"section_id": "boundary_plan_parameters", "title": "套餐选择与参数有哪些界限", "plan_ids": ["basic", "team", "business"], "feature_ids": [], "condition_ids": []},
+        {"section_id": "boundary_evidence_scope", "title": "资料能够证明到哪一层", "plan_ids": ["basic", "team", "business"], "feature_ids": [], "condition_ids": []}
+      ]
+    }
+  ]
+}

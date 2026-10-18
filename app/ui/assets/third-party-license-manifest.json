@@ -1,0 +1,2541 @@
+{
+  "schema_version": 1,
+  "scope": "Rendered production JavaScript modules and imported CSS source packages; excludes build/test-only packages.",
+  "packages": [
+    {
+      "name": "@assistant-ui/core",
+      "version": "0.3.22",
+      "license": "MIT",
+      "modules": [
+        "dist/adapters/attachment.js",
+        "dist/adapters/directive-formatter.js",
+        "dist/model-context/interactable-composer-metadata.js",
+        "dist/model-context/tool-call-text.js",
+        "dist/model-context/types.js",
+        "dist/react/AssistantProvider.js",
+        "dist/react/RuntimeAdapter.js",
+        "dist/react/client/DataRenderers.js",
+        "dist/react/client/Tools.js",
+        "dist/react/model-context/toolbox.js",
+        "dist/react/primitive-hooks/useActionBarCopy.js",
+        "dist/react/primitive-hooks/useActionBarEdit.js",
+        "dist/react/primitive-hooks/useActionBarFeedback.js",
+        "dist/react/primitive-hooks/useActionBarReload.js",
+        "dist/react/primitive-hooks/useActionBarSpeak.js",
+        "dist/react/primitive-hooks/useActionBarStopSpeaking.js",
+        "dist/react/primitive-hooks/useComposerAddAttachment.js",
+        "dist/react/primitive-hooks/useComposerCancel.js",
+        "dist/react/primitive-hooks/useComposerDictate.js",
+        "dist/react/primitive-hooks/useComposerSend.js",
+        "dist/react/primitive-hooks/useMessageError.js",
+        "dist/react/primitive-hooks/useSuggestionTrigger.js",
+        "dist/react/primitive-hooks/useThreadListItemArchive.js",
+        "dist/react/primitive-hooks/useThreadListItemDelete.js",
+        "dist/react/primitive-hooks/useThreadListItemTrigger.js",
+        "dist/react/primitive-hooks/useThreadListItemUnarchive.js",
+        "dist/react/primitive-hooks/useThreadListLoadMore.js",
+        "dist/react/primitive-hooks/useThreadListNew.js",
+        "dist/react/primitives/composer/ComposerAttachments.js",
+        "dist/react/primitives/composer/ComposerIf.js",
+        "dist/react/primitives/composer/ComposerQueue.js",
+        "dist/react/primitives/generativeUI/GenerativeUI.js",
+        "dist/react/primitives/message/MessageAttachments.js",
+        "dist/react/primitives/message/MessageGroupedParts.js",
+        "dist/react/primitives/message/MessageParts.js",
+        "dist/react/primitives/message/MessageQuote.js",
+        "dist/react/primitives/messagePart/MessagePartInProgress.js",
+        "dist/react/primitives/thread/ThreadMessages.js",
+        "dist/react/primitives/thread/ThreadSuggestions.js",
+        "dist/react/primitives/threadList/ThreadListItems.js",
+        "dist/react/primitives/threadListItem/ThreadListItemTitle.js",
+        "dist/react/providers/AttachmentByIndexProvider.js",
+        "dist/react/providers/ChainOfThoughtByIndicesProvider.js",
+        "dist/react/providers/MessageByIdProvider.js",
+        "dist/react/providers/MessageByIndexProvider.js",
+        "dist/react/providers/PartByIndexProvider.js",
+        "dist/react/providers/QueueItemByIndexProvider.js",
+        "dist/react/providers/SuggestionByIndexProvider.js",
+        "dist/react/providers/TextMessagePartProvider.js",
+        "dist/react/providers/ThreadListItemByIndexProvider.js",
+        "dist/react/runtimes/RemoteThreadRuntimeHostContext.js",
+        "dist/react/runtimes/external-store-history-copy.js",
+        "dist/react/runtimes/useExternalStoreRuntime.js",
+        "dist/react/runtimes/useLocalRuntime.js",
+        "dist/react/runtimes/useRuntimeAdapters.js",
+        "dist/react/utils/getMessageQuote.js",
+        "dist/react/utils/groupParts.js",
+        "dist/runtime/api/assistant-runtime.js",
+        "dist/runtime/api/attachment-runtime.js",
+        "dist/runtime/api/composer-runtime.js",
+        "dist/runtime/api/message-part-runtime.js",
+        "dist/runtime/api/message-runtime.js",
+        "dist/runtime/api/thread-list-item-runtime.js",
+        "dist/runtime/api/thread-list-runtime.js",
+        "dist/runtime/api/thread-runtime.js",
+        "dist/runtime/base/base-assistant-runtime-core.js",
+        "dist/runtime/base/base-composer-runtime-core.js",
+        "dist/runtime/base/base-thread-runtime-core.js",
+        "dist/runtime/base/default-edit-composer-runtime-core.js",
+        "dist/runtime/base/default-thread-composer-runtime-core.js",
+        "dist/runtime/queue/queue-item.js",
+        "dist/runtime/utils/attachment-add-operations.js",
+        "dist/runtime/utils/attachment-send-operations.js",
+        "dist/runtime/utils/auto-status.js",
+        "dist/runtime/utils/external-message-conversion.js",
+        "dist/runtime/utils/external-store-message.js",
+        "dist/runtime/utils/message-repository.js",
+        "dist/runtime/utils/resolveToolApprovalResponse.js",
+        "dist/runtime/utils/thread-message-like.js",
+        "dist/runtime/utils/thread-runtime-lifecycle.js",
+        "dist/runtime/utils/tool-call-tree.js",
+        "dist/runtime/utils/tool-interactions.js",
+        "dist/runtimes/external-store/external-store-runtime-core.js",
+        "dist/runtimes/external-store/external-store-thread-list-runtime-core.js",
+        "dist/runtimes/external-store/external-store-thread-runtime-core.js",
+        "dist/runtimes/external-store/thread-message-converter.js",
+        "dist/runtimes/tool-invocations/ToolInvocationTracker.js",
+        "dist/store/clients/chain-of-thought-client.js",
+        "dist/store/clients/model-context-client.js",
+        "dist/store/clients/no-op-composer-client.js",
+        "dist/store/clients/runtime-adapter.js",
+        "dist/store/clients/submission-message.js",
+        "dist/store/clients/suggestions.js",
+        "dist/store/clients/thread-message-client.js",
+        "dist/store/clients/thread-selection-events.js",
+        "dist/store/clients/thread-tasks.js",
+        "dist/store/primitive-predicates.js",
+        "dist/store/runtime-clients/attachment-runtime-client.js",
+        "dist/store/runtime-clients/composer-runtime-client.js",
+        "dist/store/runtime-clients/handle-runtime-action.js",
+        "dist/store/runtime-clients/handle-thread-list-action.js",
+        "dist/store/runtime-clients/liveRef.js",
+        "dist/store/runtime-clients/message-part-runtime-client.js",
+        "dist/store/runtime-clients/message-runtime-client.js",
+        "dist/store/runtime-clients/thread-list-item-runtime-client.js",
+        "dist/store/runtime-clients/thread-list-runtime-client.js",
+        "dist/store/runtime-clients/thread-runtime-client.js",
+        "dist/store/runtime-clients/useSubscribable.js",
+        "dist/subscribable/subscribable.js",
+        "dist/types/attachment.js",
+        "dist/types/error.js",
+        "dist/types/message.js",
+        "dist/utils/composite-context-provider.js",
+        "dist/utils/data-url.js",
+        "dist/utils/getGroupStatus.js",
+        "dist/utils/id.js",
+        "dist/utils/json/is-json-equal.js",
+        "dist/utils/json/is-json.js",
+        "dist/utils/normalizePartStatus.js",
+        "dist/utils/notify-event-listeners.js",
+        "dist/utils/record.js",
+        "dist/utils/report-run-failure.js",
+        "dist/utils/silent-runtime-action.js",
+        "dist/utils/text.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "eafb05991a572efa34097474b31fef45b14a8879ed1d1a8fd77de62e6fa7d275"
+        }
+      ]
+    },
+    {
+      "name": "@assistant-ui/react",
+      "version": "0.15.23",
+      "license": "MIT",
+      "modules": [
+        "dist/_virtual/_rolldown/runtime.js",
+        "dist/context/ReadonlyStore.js",
+        "dist/context/providers/ThreadViewportProvider.js",
+        "dist/context/react/ThreadViewportContext.js",
+        "dist/context/react/utils/createContextHook.js",
+        "dist/context/react/utils/createContextStoreHook.js",
+        "dist/context/stores/ThreadViewport.js",
+        "dist/internal.js",
+        "dist/legacy-runtime/AssistantRuntimeProvider.js",
+        "dist/primitives/actionBar.js",
+        "dist/primitives/actionBar/ActionBarCopy.js",
+        "dist/primitives/actionBar/ActionBarEdit.js",
+        "dist/primitives/actionBar/ActionBarExportMarkdown.js",
+        "dist/primitives/actionBar/ActionBarFeedbackNegative.js",
+        "dist/primitives/actionBar/ActionBarFeedbackPositive.js",
+        "dist/primitives/actionBar/ActionBarInteractionContext.js",
+        "dist/primitives/actionBar/ActionBarReload.js",
+        "dist/primitives/actionBar/ActionBarRoot.js",
+        "dist/primitives/actionBar/ActionBarSpeak.js",
+        "dist/primitives/actionBar/ActionBarStopSpeaking.js",
+        "dist/primitives/actionBar/useActionBarFloatStatus.js",
+        "dist/primitives/composer.js",
+        "dist/primitives/composer/ComposerAddAttachment.js",
+        "dist/primitives/composer/ComposerAttachmentDropzone.js",
+        "dist/primitives/composer/ComposerCancel.js",
+        "dist/primitives/composer/ComposerCompactContext.js",
+        "dist/primitives/composer/ComposerDictate.js",
+        "dist/primitives/composer/ComposerDictationTranscript.js",
+        "dist/primitives/composer/ComposerInput.js",
+        "dist/primitives/composer/ComposerInputPluginContext.js",
+        "dist/primitives/composer/ComposerQuote.js",
+        "dist/primitives/composer/ComposerRoot.js",
+        "dist/primitives/composer/ComposerSend.js",
+        "dist/primitives/composer/ComposerStopDictation.js",
+        "dist/primitives/composer/trigger/TriggerPopover.js",
+        "dist/primitives/composer/trigger/TriggerPopoverAction.js",
+        "dist/primitives/composer/trigger/TriggerPopoverBack.js",
+        "dist/primitives/composer/trigger/TriggerPopoverCategories.js",
+        "dist/primitives/composer/trigger/TriggerPopoverDirective.js",
+        "dist/primitives/composer/trigger/TriggerPopoverItems.js",
+        "dist/primitives/composer/trigger/TriggerPopoverResource.js",
+        "dist/primitives/composer/trigger/TriggerPopoverRootContext.js",
+        "dist/primitives/composer/trigger/detectTrigger.js",
+        "dist/primitives/composer/trigger/index.js",
+        "dist/primitives/composer/trigger/matchesTriggerItemQuery.js",
+        "dist/primitives/composer/trigger/triggerDetectionResource.js",
+        "dist/primitives/composer/trigger/triggerKeyboardResource.js",
+        "dist/primitives/composer/trigger/triggerNavigationResource.js",
+        "dist/primitives/composer/trigger/triggerSelectionResource.js",
+        "dist/primitives/composer/useComposerInputState.js",
+        "dist/primitives/message.js",
+        "dist/primitives/message/MessageError.js",
+        "dist/primitives/message/MessageIf.js",
+        "dist/primitives/message/MessageParts.js",
+        "dist/primitives/message/MessagePartsGrouped.js",
+        "dist/primitives/message/MessageRoot.js",
+        "dist/primitives/messagePart/MessagePartImage.js",
+        "dist/primitives/messagePart/MessagePartText.js",
+        "dist/primitives/messagePart/useMessagePartImage.js",
+        "dist/primitives/messagePart/useMessagePartText.js",
+        "dist/primitives/thread.js",
+        "dist/primitives/thread/ThreadEmpty.js",
+        "dist/primitives/thread/ThreadIf.js",
+        "dist/primitives/thread/ThreadRoot.js",
+        "dist/primitives/thread/ThreadRootElementContext.js",
+        "dist/primitives/thread/ThreadScrollToBottom.js",
+        "dist/primitives/thread/ThreadSuggestion.js",
+        "dist/primitives/thread/ThreadViewport.js",
+        "dist/primitives/thread/ThreadViewportFooter.js",
+        "dist/primitives/thread/topAnchor/computeTopAnchorSlack.js",
+        "dist/primitives/thread/topAnchor/createReserveObservers.js",
+        "dist/primitives/thread/topAnchor/mountTopAnchorReserve.js",
+        "dist/primitives/thread/topAnchor/topAnchorTurn.js",
+        "dist/primitives/thread/topAnchor/topAnchorUtils.js",
+        "dist/primitives/thread/topAnchor/useTopAnchorReserve.js",
+        "dist/primitives/thread/useThreadViewportAutoScroll.js",
+        "dist/primitives/threadList.js",
+        "dist/primitives/threadList/ThreadListLoadMore.js",
+        "dist/primitives/threadList/ThreadListNew.js",
+        "dist/primitives/threadList/ThreadListRoot.js",
+        "dist/primitives/threadListFocusGroup.js",
+        "dist/primitives/threadListItem.js",
+        "dist/primitives/threadListItem/ThreadListItemArchive.js",
+        "dist/primitives/threadListItem/ThreadListItemDelete.js",
+        "dist/primitives/threadListItem/ThreadListItemRoot.js",
+        "dist/primitives/threadListItem/ThreadListItemTrigger.js",
+        "dist/primitives/threadListItem/ThreadListItemUnarchive.js",
+        "dist/utils/Primitive.js",
+        "dist/utils/createActionButton.js",
+        "dist/utils/hooks/useManagedRef.js",
+        "dist/utils/hooks/useMediaQuery.js",
+        "dist/utils/hooks/useOnResizeContent.js",
+        "dist/utils/hooks/useOnScrollToBottom.js",
+        "dist/utils/hooks/useSizeHandle.js",
+        "dist/utils/smooth/SmoothContext.js",
+        "dist/utils/smooth/useSmooth.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "eafb05991a572efa34097474b31fef45b14a8879ed1d1a8fd77de62e6fa7d275"
+        }
+      ]
+    },
+    {
+      "name": "@assistant-ui/react-markdown",
+      "version": "0.14.18",
+      "license": "MIT",
+      "modules": [
+        "dist/code-fence.js",
+        "dist/memoization.js",
+        "dist/overrides/CodeBlock.js",
+        "dist/overrides/CodeOverride.js",
+        "dist/overrides/PreOverride.js",
+        "dist/overrides/defaultComponents.js",
+        "dist/overrides/withDefaults.js",
+        "dist/primitives/MarkdownText.js",
+        "styles/dot.css"
+      ],
+      "css_inputs": [
+        "styles/dot.css"
+      ],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "eafb05991a572efa34097474b31fef45b14a8879ed1d1a8fd77de62e6fa7d275"
+        }
+      ]
+    },
+    {
+      "name": "@assistant-ui/store",
+      "version": "0.3.16",
+      "license": "MIT",
+      "modules": [
+        "dist/AuiConfig.js",
+        "dist/AuiIf.js",
+        "dist/AuiProvider.js",
+        "dist/Derived.js",
+        "dist/RenderChildrenWithAccessor.js",
+        "dist/attachTransformScopes.js",
+        "dist/types/events.js",
+        "dist/useAui.js",
+        "dist/useAuiEvent.js",
+        "dist/useAuiState.js",
+        "dist/useClientLookup.js",
+        "dist/useClientResource.js",
+        "dist/utils/BaseProxyHandler.js",
+        "dist/utils/NotificationManager.js",
+        "dist/utils/client-accessor.js",
+        "dist/utils/client-keys.js",
+        "dist/utils/derived-hook.js",
+        "dist/utils/destroy-signal-context.js",
+        "dist/utils/env.js",
+        "dist/utils/optional-client-view.js",
+        "dist/utils/proxied-assistant-state.js",
+        "dist/utils/react-assistant-context.js",
+        "dist/utils/shallow-equal.js",
+        "dist/utils/tap-assistant-context.js",
+        "dist/utils/tap-client-stack-context.js",
+        "dist/utils/useHostDestroySignal.js",
+        "dist/utils/useReplaySafeEffect.js",
+        "dist/utils/useShallowStable.js",
+        "dist/utils/viewport-scroll.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "eafb05991a572efa34097474b31fef45b14a8879ed1d1a8fd77de62e6fa7d275"
+        }
+      ]
+    },
+    {
+      "name": "@assistant-ui/tap",
+      "version": "0.9.20",
+      "license": "MIT",
+      "modules": [
+        "dist/core/ResourceFiber.js",
+        "dist/core/context.js",
+        "dist/core/helpers/commit.js",
+        "dist/core/helpers/env.js",
+        "dist/core/helpers/execution-context.js",
+        "dist/core/helpers/root.js",
+        "dist/core/helpers/thenable.js",
+        "dist/core/helpers/throwAggregated.js",
+        "dist/core/react-dispatcher.js",
+        "dist/core/resource.js",
+        "dist/core/scheduler.js",
+        "dist/core/withKey.js",
+        "dist/hooks/useResource.js",
+        "dist/hooks/useResources.js",
+        "dist/hooks/useTapHost.js",
+        "dist/hooks/useTapRoot.js",
+        "dist/hooks/utils/depsShallowEqual.js",
+        "dist/hooks/utils/useDevStrictMode.js",
+        "dist/hooks/utils/useHostCell.js",
+        "dist/hooks/utils/useRenderMemo.js",
+        "dist/hooks/utils/useResourceFiberHostUtils.js",
+        "dist/react-hooks/use.js",
+        "dist/react-hooks/useCallback.js",
+        "dist/react-hooks/useDebugValue.js",
+        "dist/react-hooks/useEffect.js",
+        "dist/react-hooks/useEffectEvent.js",
+        "dist/react-hooks/useId.js",
+        "dist/react-hooks/useImperativeHandle.js",
+        "dist/react-hooks/useInsertionEffect.js",
+        "dist/react-hooks/useMemo.js",
+        "dist/react-hooks/useMemoCache.js",
+        "dist/react-hooks/useReducer.js",
+        "dist/react-hooks/useRef.js",
+        "dist/react-hooks/useState.js",
+        "dist/react-hooks/useSyncExternalStore.js",
+        "dist/react-hooks/utils/hookErrors.js",
+        "dist/react-shim/compiler-runtime.js",
+        "dist/react-shim/index.js",
+        "dist/react-shim/useReactEffectEvent.js",
+        "dist/react-shim/useReactMemoCache.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "eafb05991a572efa34097474b31fef45b14a8879ed1d1a8fd77de62e6fa7d275"
+        }
+      ]
+    },
+    {
+      "name": "@babel/runtime",
+      "version": "7.29.7",
+      "license": "MIT",
+      "modules": [
+        "helpers/esm/extends.js",
+        "helpers/esm/objectWithoutPropertiesLoose.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        }
+      ]
+    },
+    {
+      "name": "@base-ui/react",
+      "version": "1.8.0",
+      "license": "MIT",
+      "modules": [
+        "button/Button.mjs",
+        "collapsible/panel/CollapsiblePanel.mjs",
+        "collapsible/panel/CollapsiblePanelCssVars.mjs",
+        "collapsible/panel/CollapsiblePanelDataAttributes.mjs",
+        "collapsible/panel/useCollapsiblePanel.mjs",
+        "collapsible/root/CollapsibleRoot.mjs",
+        "collapsible/root/CollapsibleRootContext.mjs",
+        "collapsible/root/stateAttributesMapping.mjs",
+        "collapsible/root/useCollapsibleRoot.mjs",
+        "collapsible/trigger/CollapsibleTrigger.mjs",
+        "collapsible/trigger/CollapsibleTriggerDataAttributes.mjs",
+        "dialog/backdrop/DialogBackdrop.mjs",
+        "dialog/close/DialogClose.mjs",
+        "dialog/description/DialogDescription.mjs",
+        "dialog/popup/DialogPopup.mjs",
+        "dialog/popup/DialogPopupCssVars.mjs",
+        "dialog/popup/DialogPopupDataAttributes.mjs",
+        "dialog/portal/DialogPortal.mjs",
+        "dialog/portal/DialogPortalContext.mjs",
+        "dialog/root/DialogRoot.mjs",
+        "dialog/root/DialogRootContext.mjs",
+        "dialog/root/useDialogRoot.mjs",
+        "dialog/root/useRenderDialogRoot.mjs",
+        "dialog/store/DialogStore.mjs",
+        "dialog/title/DialogTitle.mjs",
+        "dialog/utils/stateAttributesMapping.mjs",
+        "floating-ui-react/components/FloatingFocusManager.mjs",
+        "floating-ui-react/components/FloatingPortal.mjs",
+        "floating-ui-react/components/FloatingRootStore.mjs",
+        "floating-ui-react/components/FloatingTree.mjs",
+        "floating-ui-react/hooks/useDismiss.mjs",
+        "floating-ui-react/hooks/useSyncedFloatingRootContext.mjs",
+        "floating-ui-react/utils/composite.mjs",
+        "floating-ui-react/utils/constants.mjs",
+        "floating-ui-react/utils/createAttribute.mjs",
+        "floating-ui-react/utils/createEventEmitter.mjs",
+        "floating-ui-react/utils/element.mjs",
+        "floating-ui-react/utils/enqueueFocus.mjs",
+        "floating-ui-react/utils/event.mjs",
+        "floating-ui-react/utils/markOthers.mjs",
+        "floating-ui-react/utils/nodes.mjs",
+        "floating-ui-react/utils/tabbable.mjs",
+        "internals/TransitionStatusDataAttributes.mjs",
+        "internals/composite/composite.mjs",
+        "internals/composite/root/CompositeRootContext.mjs",
+        "internals/constants.mjs",
+        "internals/createBaseUIEventDetails.mjs",
+        "internals/getStateAttributesProps.mjs",
+        "internals/reason-parts.mjs",
+        "internals/stateAttributesMapping.mjs",
+        "internals/use-button/useButton.mjs",
+        "internals/useAnimationsFinished.mjs",
+        "internals/useBaseUiId.mjs",
+        "internals/useOpenChangeComplete.mjs",
+        "internals/useRenderElement.mjs",
+        "internals/useTransitionStatus.mjs",
+        "merge-props/mergeProps.mjs",
+        "utils/CommonPopupDataAttributes.mjs",
+        "utils/CommonTriggerDataAttributes.mjs",
+        "utils/FocusGuard.mjs",
+        "utils/InternalBackdrop.mjs",
+        "utils/collapsibleOpenStateMapping.mjs",
+        "utils/dispatchClickWithModifiers.mjs",
+        "utils/popupStateMapping.mjs",
+        "utils/popups/popupStoreUtils.mjs",
+        "utils/popups/popupTriggerMap.mjs",
+        "utils/popups/store.mjs",
+        "utils/resolveClassName.mjs",
+        "utils/resolveRef.mjs",
+        "utils/resolveStyle.mjs",
+        "utils/useFocusableWhenDisabled.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "07fc1b39d69d14bc7d40482a628f47226258eb01265db68ae684944b916beb2a"
+        }
+      ]
+    },
+    {
+      "name": "@base-ui/utils",
+      "version": "0.4.0",
+      "license": "MIT",
+      "modules": [
+        "addEventListener.mjs",
+        "empty.mjs",
+        "fastHooks.mjs",
+        "formatErrorMessage.mjs",
+        "getReactElementRef.mjs",
+        "inertValue.mjs",
+        "mergeCleanups.mjs",
+        "mergeObjects.mjs",
+        "owner.mjs",
+        "platform/engine.mjs",
+        "platform/env.mjs",
+        "platform/os.mjs",
+        "platform/screen-reader.mjs",
+        "platform/shared.mjs",
+        "reactVersion.mjs",
+        "safeReact.mjs",
+        "shadowDom.mjs",
+        "store/ReactStore.mjs",
+        "store/Store.mjs",
+        "store/useStore.mjs",
+        "useAnimationFrame.mjs",
+        "useControlled.mjs",
+        "useId.mjs",
+        "useIsoLayoutEffect.mjs",
+        "useMergedRefs.mjs",
+        "useOnMount.mjs",
+        "useRefWithInit.mjs",
+        "useScrollLock.mjs",
+        "useStableCallback.mjs",
+        "useTimeout.mjs",
+        "useValueAsRef.mjs",
+        "visuallyHidden.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "07fc1b39d69d14bc7d40482a628f47226258eb01265db68ae684944b916beb2a"
+        }
+      ]
+    },
+    {
+      "name": "@floating-ui/utils",
+      "version": "0.2.12",
+      "license": "MIT",
+      "modules": [
+        "dist/floating-ui.utils.dom.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "0e4c9a9b6c71019cbbea3bdc20b01223110a9035700f9c960c8fcbf78c2325ce"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/primitive",
+      "version": "1.1.7",
+      "license": "MIT",
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-collection",
+      "version": "1.1.15",
+      "license": "MIT",
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-compose-refs",
+      "version": "1.1.5",
+      "license": "MIT",
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-context",
+      "version": "1.2.2",
+      "license": "MIT",
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-direction",
+      "version": "1.1.4",
+      "license": "MIT",
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-primitive",
+      "version": "2.1.10",
+      "license": "MIT",
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-slot",
+      "version": "1.3.3",
+      "license": "MIT",
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-use-callback-ref",
+      "version": "1.1.4",
+      "license": "MIT",
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@radix-ui/react-use-escape-keydown",
+      "version": "1.1.5",
+      "license": "MIT",
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "@ungap/structured-clone",
+      "version": "1.4.0",
+      "license": "ISC",
+      "modules": [
+        "esm/deserialize.js",
+        "esm/index.js",
+        "esm/serialize.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "dc6d4961d8b6ee747231582ae9c53ce1d66bf76bc9f5a28f554c0e97210953bf"
+        }
+      ]
+    },
+    {
+      "name": "assistant-stream",
+      "version": "0.3.46",
+      "license": "MIT",
+      "modules": [
+        "dist/core/modules/assistant-stream.js",
+        "dist/core/modules/text.js",
+        "dist/core/modules/tool-call.js",
+        "dist/core/tool/ToolCallReader.js",
+        "dist/core/tool/ToolExecutionStream.js",
+        "dist/core/tool/ToolResponse.js",
+        "dist/core/tool/toolResultStream.js",
+        "dist/core/utils/Counter.js",
+        "dist/core/utils/generateId.js",
+        "dist/core/utils/stream/AssistantMetaTransformStream.js",
+        "dist/core/utils/stream/PipeableTransformStream.js",
+        "dist/core/utils/stream/controller-guards.js",
+        "dist/core/utils/stream/createControllerStream.js",
+        "dist/core/utils/stream/merge.js",
+        "dist/core/utils/stream/path-utils.js",
+        "dist/core/utils/withPromiseOrValue.js",
+        "dist/utils/AsyncIterableStream.js",
+        "dist/utils/json/fix-json.js",
+        "dist/utils/json/parse-partial-json-object.js",
+        "dist/utils/promiseWithResolvers.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "eafb05991a572efa34097474b31fef45b14a8879ed1d1a8fd77de62e6fa7d275"
+        }
+      ]
+    },
+    {
+      "name": "bail",
+      "version": "2.0.2",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "63cb98b3f6abfb3c3592c16f88253c1bdc834087bf52671e8ce5609e4eb693cf"
+        }
+      ]
+    },
+    {
+      "name": "ccount",
+      "version": "2.0.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "63cb98b3f6abfb3c3592c16f88253c1bdc834087bf52671e8ce5609e4eb693cf"
+        }
+      ]
+    },
+    {
+      "name": "class-variance-authority",
+      "version": "0.7.1",
+      "license": "Apache-2.0",
+      "modules": [
+        "dist/index.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "0ccbf956cffc8dcf515809433cb5242ee67c94513d46e48c261d68d0880de406"
+        }
+      ]
+    },
+    {
+      "name": "classnames",
+      "version": "2.5.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "0c1c24dcc129cb0c02ee9803cfa7a50061c236a3b59b36a714c27f3ade66d7be"
+        }
+      ]
+    },
+    {
+      "name": "clsx",
+      "version": "2.1.1",
+      "license": "MIT",
+      "modules": [
+        "dist/clsx.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "9a9edad7baae52622bddf3c15b2ef8a33d2c89f2d25408ad13e8a7481c6b0c97"
+        }
+      ]
+    },
+    {
+      "name": "comma-separated-tokens",
+      "version": "2.0.3",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d"
+        }
+      ]
+    },
+    {
+      "name": "decode-named-character-reference",
+      "version": "1.3.0",
+      "license": "MIT",
+      "modules": [
+        "index.dom.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "devlop",
+      "version": "1.1.0",
+      "license": "MIT",
+      "modules": [
+        "lib/default.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "6f296a5eccc1dc96714bb94ebaa9cac25b0a1467d74cc5263ac4d0646ab01f62"
+        }
+      ]
+    },
+    {
+      "name": "escape-string-regexp",
+      "version": "5.0.0",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        }
+      ]
+    },
+    {
+      "name": "estree-util-is-identifier-name",
+      "version": "3.0.0",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61"
+        }
+      ]
+    },
+    {
+      "name": "extend",
+      "version": "3.0.2",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "97af7428f93afbab9bf79cd09254da1357161794f4255eb1b4599f04dd2d2e7c"
+        }
+      ]
+    },
+    {
+      "name": "hast-util-to-jsx-runtime",
+      "version": "2.3.6",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "hast-util-whitespace",
+      "version": "3.0.0",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d"
+        }
+      ]
+    },
+    {
+      "name": "html-url-attributes",
+      "version": "3.0.1",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "e18cf5173e928f808f0cd208097fee8fbec9d28fc0255213938e4c559e29ff58"
+        }
+      ]
+    },
+    {
+      "name": "inline-style-parser",
+      "version": "0.2.7",
+      "license": "MIT",
+      "modules": [
+        "cjs/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "395c95f20598da653ff1eb1cb9d74947c7fac689697147f1d192fd0242a0e635"
+        }
+      ]
+    },
+    {
+      "name": "is-plain-obj",
+      "version": "4.1.0",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        }
+      ]
+    },
+    {
+      "name": "longest-streak",
+      "version": "3.1.0",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "9f084fac69d8cf1e6ce983ba5a3499c7695ed74a26ec625c38f0fd19fddd5e10"
+        }
+      ]
+    },
+    {
+      "name": "lucide-react",
+      "version": "1.46.0",
+      "license": "ISC",
+      "modules": [
+        "dist/esm/Icon.mjs",
+        "dist/esm/context.mjs",
+        "dist/esm/createLucideIcon.mjs",
+        "dist/esm/icons/arrow-down.mjs",
+        "dist/esm/icons/arrow-up.mjs",
+        "dist/esm/icons/check.mjs",
+        "dist/esm/icons/chevron-down.mjs",
+        "dist/esm/icons/copy.mjs",
+        "dist/esm/icons/database.mjs",
+        "dist/esm/icons/messages-square.mjs",
+        "dist/esm/icons/panel-left.mjs",
+        "dist/esm/icons/plus.mjs",
+        "dist/esm/icons/x.mjs",
+        "dist/esm/shared/src/build/buildLucideIconForReact.mjs",
+        "dist/esm/shared/src/build/buildLucideIconNode.mjs",
+        "dist/esm/shared/src/build/defaultAttributes.mjs",
+        "dist/esm/shared/src/utils/hasA11yProp.mjs",
+        "dist/esm/shared/src/utils/mergeClasses.mjs",
+        "dist/esm/shared/src/utils/toCamelCase.mjs",
+        "dist/esm/shared/src/utils/toKebabCase.mjs",
+        "dist/esm/shared/src/utils/toLucideIconData.mjs",
+        "dist/esm/shared/src/utils/toPascalCase.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57"
+        }
+      ]
+    },
+    {
+      "name": "markdown-table",
+      "version": "3.0.4",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "mdast-util-find-and-replace",
+      "version": "3.0.2",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "mdast-util-from-markdown",
+      "version": "2.1.0",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "mdast-util-gfm",
+      "version": "3.1.0",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "mdast-util-gfm-autolink-literal",
+      "version": "2.0.1",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61"
+        }
+      ]
+    },
+    {
+      "name": "mdast-util-gfm-footnote",
+      "version": "2.1.0",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "mdast-util-gfm-strikethrough",
+      "version": "2.0.1",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "mdast-util-gfm-table",
+      "version": "2.0.0",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61"
+        }
+      ]
+    },
+    {
+      "name": "mdast-util-gfm-task-list-item",
+      "version": "2.0.0",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61"
+        }
+      ]
+    },
+    {
+      "name": "mdast-util-phrasing",
+      "version": "4.1.0",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "b6d1a4e1831b177acc96f22a817d4f0f4c18419355badc3125754445fc69e3a7"
+        }
+      ]
+    },
+    {
+      "name": "mdast-util-to-hast",
+      "version": "13.2.1",
+      "license": "MIT",
+      "modules": [
+        "lib/footer.js",
+        "lib/handlers/blockquote.js",
+        "lib/handlers/break.js",
+        "lib/handlers/code.js",
+        "lib/handlers/delete.js",
+        "lib/handlers/emphasis.js",
+        "lib/handlers/footnote-reference.js",
+        "lib/handlers/heading.js",
+        "lib/handlers/html.js",
+        "lib/handlers/image-reference.js",
+        "lib/handlers/image.js",
+        "lib/handlers/index.js",
+        "lib/handlers/inline-code.js",
+        "lib/handlers/link-reference.js",
+        "lib/handlers/link.js",
+        "lib/handlers/list-item.js",
+        "lib/handlers/list.js",
+        "lib/handlers/paragraph.js",
+        "lib/handlers/root.js",
+        "lib/handlers/strong.js",
+        "lib/handlers/table-cell.js",
+        "lib/handlers/table-row.js",
+        "lib/handlers/table.js",
+        "lib/handlers/text.js",
+        "lib/handlers/thematic-break.js",
+        "lib/index.js",
+        "lib/revert.js",
+        "lib/state.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d"
+        }
+      ]
+    },
+    {
+      "name": "mdast-util-to-markdown",
+      "version": "2.2.0",
+      "license": "MIT",
+      "modules": [
+        "lib/handle/blockquote.js",
+        "lib/handle/break.js",
+        "lib/handle/code.js",
+        "lib/handle/definition.js",
+        "lib/handle/emphasis.js",
+        "lib/handle/heading.js",
+        "lib/handle/html.js",
+        "lib/handle/image-reference.js",
+        "lib/handle/image.js",
+        "lib/handle/index.js",
+        "lib/handle/inline-code.js",
+        "lib/handle/link-reference.js",
+        "lib/handle/link.js",
+        "lib/handle/list-item.js",
+        "lib/handle/list.js",
+        "lib/handle/paragraph.js",
+        "lib/handle/root.js",
+        "lib/handle/strong.js",
+        "lib/handle/text.js",
+        "lib/handle/thematic-break.js",
+        "lib/util/check-bullet-ordered.js",
+        "lib/util/check-bullet-other.js",
+        "lib/util/check-bullet.js",
+        "lib/util/check-emphasis.js",
+        "lib/util/check-fence.js",
+        "lib/util/check-list-item-indent.js",
+        "lib/util/check-quote.js",
+        "lib/util/check-rule-repetition.js",
+        "lib/util/check-rule.js",
+        "lib/util/check-strong.js",
+        "lib/util/encode-character-reference.js",
+        "lib/util/format-code-as-indented.js",
+        "lib/util/format-heading-as-setext.js",
+        "lib/util/format-link-as-autolink.js",
+        "lib/util/pattern-in-scope.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "mdast-util-to-string",
+      "version": "4.0.0",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "63cb98b3f6abfb3c3592c16f88253c1bdc834087bf52671e8ce5609e4eb693cf"
+        }
+      ]
+    },
+    {
+      "name": "micromark",
+      "version": "4.0.3",
+      "license": "MIT",
+      "modules": [
+        "lib/constructs.js",
+        "lib/create-tokenizer.js",
+        "lib/initialize/content.js",
+        "lib/initialize/document.js",
+        "lib/initialize/flow.js",
+        "lib/initialize/text.js",
+        "lib/parse.js",
+        "lib/postprocess.js",
+        "lib/preprocess.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-core-commonmark",
+      "version": "2.0.4",
+      "license": "MIT",
+      "modules": [
+        "lib/attention.js",
+        "lib/autolink.js",
+        "lib/blank-line.js",
+        "lib/block-quote.js",
+        "lib/character-escape.js",
+        "lib/character-reference.js",
+        "lib/code-fenced.js",
+        "lib/code-indented.js",
+        "lib/code-text.js",
+        "lib/content.js",
+        "lib/definition.js",
+        "lib/hard-break-escape.js",
+        "lib/heading-atx.js",
+        "lib/html-flow.js",
+        "lib/html-text.js",
+        "lib/label-end.js",
+        "lib/label-start-image.js",
+        "lib/label-start-link.js",
+        "lib/line-ending.js",
+        "lib/list.js",
+        "lib/partial-non-lazy-continuation.js",
+        "lib/setext-underline.js",
+        "lib/thematic-break.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-extension-gfm",
+      "version": "3.0.0",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61"
+        }
+      ]
+    },
+    {
+      "name": "micromark-extension-gfm-autolink-literal",
+      "version": "2.1.0",
+      "license": "MIT",
+      "modules": [
+        "lib/syntax.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61"
+        }
+      ]
+    },
+    {
+      "name": "micromark-extension-gfm-footnote",
+      "version": "2.1.0",
+      "license": "MIT",
+      "modules": [
+        "lib/syntax.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "807a88522a850092aece49486207c17c313c4d5708ac276524840fe1caa0b0fa"
+        }
+      ]
+    },
+    {
+      "name": "micromark-extension-gfm-strikethrough",
+      "version": "2.1.0",
+      "license": "MIT",
+      "modules": [
+        "lib/syntax.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61"
+        }
+      ]
+    },
+    {
+      "name": "micromark-extension-gfm-table",
+      "version": "2.1.2",
+      "license": "MIT",
+      "modules": [
+        "lib/edit-map.js",
+        "lib/infer.js",
+        "lib/syntax.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-extension-gfm-task-list-item",
+      "version": "2.1.0",
+      "license": "MIT",
+      "modules": [
+        "lib/syntax.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61"
+        }
+      ]
+    },
+    {
+      "name": "micromark-factory-destination",
+      "version": "2.0.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-factory-label",
+      "version": "2.0.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-factory-space",
+      "version": "2.1.0",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-factory-title",
+      "version": "2.0.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-factory-whitespace",
+      "version": "2.0.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-util-character",
+      "version": "2.1.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-util-chunked",
+      "version": "2.0.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-util-classify-character",
+      "version": "2.0.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-util-combine-extensions",
+      "version": "2.0.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-util-decode-numeric-character-reference",
+      "version": "2.0.2",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-util-decode-string",
+      "version": "2.0.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-util-edit-map",
+      "version": "1.0.0",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-util-html-tag-name",
+      "version": "2.0.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-util-normalize-identifier",
+      "version": "2.0.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-util-resolve-all",
+      "version": "2.0.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-util-sanitize-uri",
+      "version": "2.0.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "micromark-util-subtokenize",
+      "version": "2.1.0",
+      "license": "MIT",
+      "modules": [
+        "index.js",
+        "lib/splice-buffer.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "nanoid",
+      "version": "6.0.1",
+      "license": "MIT",
+      "modules": [
+        "non-secure/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "4383cb2c3608397ce7a4159502614ed66890f8999c2a9c056dd3b1024d6721f0"
+        }
+      ]
+    },
+    {
+      "name": "property-information",
+      "version": "7.2.0",
+      "license": "MIT",
+      "modules": [
+        "index.js",
+        "lib/aria.js",
+        "lib/find.js",
+        "lib/hast-to-react.js",
+        "lib/html.js",
+        "lib/normalize.js",
+        "lib/svg.js",
+        "lib/util/case-insensitive-transform.js",
+        "lib/util/case-sensitive-transform.js",
+        "lib/util/create.js",
+        "lib/util/defined-info.js",
+        "lib/util/info.js",
+        "lib/util/merge.js",
+        "lib/util/schema.js",
+        "lib/util/types.js",
+        "lib/xlink.js",
+        "lib/xml.js",
+        "lib/xmlns.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "5d0698266086f217bb11ea0499d33453e401fe479fb9126ad04e625e63d3557b"
+        }
+      ]
+    },
+    {
+      "name": "radix-ui",
+      "version": "1.6.7",
+      "license": "MIT",
+      "modules": [
+        "dist/internal.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+        }
+      ]
+    },
+    {
+      "name": "react",
+      "version": "19.3.0",
+      "license": "MIT",
+      "modules": [
+        "cjs/react-jsx-runtime.production.js",
+        "cjs/react.production.js",
+        "index.js",
+        "jsx-runtime.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "name": "react-dom",
+      "version": "19.3.0",
+      "license": "MIT",
+      "modules": [
+        "cjs/react-dom-client.production.js",
+        "cjs/react-dom.production.js",
+        "client.js",
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "name": "react-markdown",
+      "version": "10.1.0",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "f6196c64e144f9a6fa9154c3a80bc8b89615a9567934b83a8951879f06ba2aef"
+        }
+      ]
+    },
+    {
+      "name": "react-textarea-autosize",
+      "version": "8.5.9",
+      "license": "MIT",
+      "modules": [
+        "dist/react-textarea-autosize.browser.esm.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "2c2a938456c54cab1c4ecd38ea08230c063d9f1a478fc30ec5b172682f9fb1b1"
+        }
+      ]
+    },
+    {
+      "name": "remark-gfm",
+      "version": "4.0.1",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "remark-parse",
+      "version": "11.0.0",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "413654b0a78b98661dce96d2aff2e4d075603d220b8483e28b1aa010ccc138b4"
+        }
+      ]
+    },
+    {
+      "name": "remark-rehype",
+      "version": "11.1.2",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "scheduler",
+      "version": "0.28.0",
+      "license": "MIT",
+      "modules": [
+        "cjs/scheduler.production.js",
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "name": "secure-json-parse",
+      "version": "4.1.0",
+      "license": "BSD-3-Clause",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "d490035c46547ddc88330bc0b42fcd89eabfd66435c4291352d1b9b68d62c729"
+        }
+      ]
+    },
+    {
+      "name": "space-separated-tokens",
+      "version": "2.0.2",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d"
+        }
+      ]
+    },
+    {
+      "name": "style-to-js",
+      "version": "1.1.21",
+      "license": "MIT",
+      "modules": [
+        "cjs/index.js",
+        "cjs/utilities.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "bbb380e5c1a717079378d6ea4d33c8a5a81655d4612b749f882e34e46712aab5"
+        }
+      ]
+    },
+    {
+      "name": "style-to-object",
+      "version": "1.0.14",
+      "license": "MIT",
+      "modules": [
+        "cjs/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "896c9fd6b5fc48ac31800b9d29a6e3ffcb0c2d534ed077ebfa5c2fa388cc38b7"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-merge",
+      "version": "3.5.0",
+      "license": "MIT",
+      "modules": [
+        "dist/bundle-mjs.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "d4c70c7ce38cea8778f0aed3fc0bef0a9dbd27f13bd8b6773cbd6d37941971e5"
+        }
+      ]
+    },
+    {
+      "name": "tailwindcss",
+      "version": "4.3.3",
+      "license": "MIT",
+      "modules": [],
+      "css_inputs": [
+        "index.css"
+      ],
+      "chunks": [],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985"
+        }
+      ]
+    },
+    {
+      "name": "trim-lines",
+      "version": "3.0.1",
+      "license": "MIT",
+      "modules": [
+        "index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "9f084fac69d8cf1e6ce983ba5a3499c7695ed74a26ec625c38f0fd19fddd5e10"
+        }
+      ]
+    },
+    {
+      "name": "trough",
+      "version": "2.2.0",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "6c03fd41cfd7c92d8aa8a2fa521b94b2683f059123281dcf921ddea9216b6254"
+        }
+      ]
+    },
+    {
+      "name": "tw-animate-css",
+      "version": "1.4.0",
+      "license": "MIT",
+      "modules": [],
+      "css_inputs": [
+        "dist/tw-animate.css"
+      ],
+      "chunks": [],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "039184dfa0a822397b3f45a435b5b1e538721587fbade96b9fa80f86cb354109"
+        }
+      ]
+    },
+    {
+      "name": "unified",
+      "version": "11.0.5",
+      "license": "MIT",
+      "modules": [
+        "lib/callable-instance.js",
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "05811400116ed61f1a7693b78fe8ca6598c155a12f3978e609db4df648a4cb3d"
+        }
+      ]
+    },
+    {
+      "name": "unist-util-is",
+      "version": "6.0.1",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "82974dbf2639d13edab95c32ed9cb6c0867ede272cd2e07ce47ce8548fe55c05"
+        }
+      ]
+    },
+    {
+      "name": "unist-util-position",
+      "version": "5.0.0",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "63cb98b3f6abfb3c3592c16f88253c1bdc834087bf52671e8ce5609e4eb693cf"
+        }
+      ]
+    },
+    {
+      "name": "unist-util-stringify-position",
+      "version": "4.0.0",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d"
+        }
+      ]
+    },
+    {
+      "name": "unist-util-visit",
+      "version": "5.1.0",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "63cb98b3f6abfb3c3592c16f88253c1bdc834087bf52671e8ce5609e4eb693cf"
+        }
+      ]
+    },
+    {
+      "name": "unist-util-visit-parents",
+      "version": "6.0.2",
+      "license": "MIT",
+      "modules": [
+        "lib/color.js",
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d"
+        }
+      ]
+    },
+    {
+      "name": "use-composed-ref",
+      "version": "1.4.0",
+      "license": "MIT",
+      "modules": [
+        "dist/use-composed-ref.esm.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "vendor/licenses/use-composed-ref-1.4.0-NOTICE.txt",
+          "sha256": "a26e15f34c614ee3e730319d1185f2b43178551c8149fab3bc19455d16d16b9a"
+        }
+      ],
+      "reviewed_exception": {
+        "package_json_sha256": "f1bb61c939b089aa90f631b513f14c7d2eaff3093395634365243127f2ba8547",
+        "notice": "vendor/licenses/use-composed-ref-1.4.0-NOTICE.txt",
+        "notice_sha256": "a26e15f34c614ee3e730319d1185f2b43178551c8149fab3bc19455d16d16b9a",
+        "source": "https://raw.githubusercontent.com/Andarist/use-composed-ref/ea2c9d969f2f90a349f4c99338b806423824cea2/package.json",
+        "reason": "Exact-version upstream MIT declaration; npm package and fixed source revision provide no separate license text or copyright notice.",
+        "upstream_metadata": "vendor/licenses/use-composed-ref-1.4.0-package.json",
+        "upstream_metadata_sha256": "f1bb61c939b089aa90f631b513f14c7d2eaff3093395634365243127f2ba8547"
+      }
+    },
+    {
+      "name": "use-isomorphic-layout-effect",
+      "version": "1.2.1",
+      "license": "MIT",
+      "modules": [
+        "dist/use-isomorphic-layout-effect.browser.esm.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "82fb62378a03a80df2a21d491d70cc8928912e35a8e8378fb0fcbe6e5493aec5"
+        }
+      ]
+    },
+    {
+      "name": "use-latest",
+      "version": "1.3.0",
+      "license": "MIT",
+      "modules": [
+        "dist/use-latest.esm.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "c2452d345744508572ba50731ccbe84faea80ba507bd6d52c2a34f831ce95574"
+        }
+      ]
+    },
+    {
+      "name": "use-sync-external-store",
+      "version": "1.7.0",
+      "license": "MIT",
+      "modules": [
+        "cjs/use-sync-external-store-shim.production.js",
+        "cjs/use-sync-external-store-shim/with-selector.production.js",
+        "shim/index.js",
+        "shim/with-selector.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "name": "vfile",
+      "version": "6.0.3",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js",
+        "lib/minpath.browser.js",
+        "lib/minproc.browser.js",
+        "lib/minurl.browser.js",
+        "lib/minurl.shared.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "05811400116ed61f1a7693b78fe8ca6598c155a12f3978e609db4df648a4cb3d"
+        }
+      ]
+    },
+    {
+      "name": "vfile-message",
+      "version": "4.0.3",
+      "license": "MIT",
+      "modules": [
+        "lib/index.js"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "license",
+          "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb"
+        }
+      ]
+    },
+    {
+      "name": "zustand",
+      "version": "5.0.15",
+      "license": "MIT",
+      "modules": [
+        "esm/react.mjs",
+        "esm/vanilla.mjs"
+      ],
+      "css_inputs": [],
+      "chunks": [
+        "assets/index-QLU15ObM.js"
+      ],
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "c1e6e266563517467b1bf874817d23e426f3149252bd7d42758cd697514b8417"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "version": "chengxing-demo-v1",
+  "product": {
+    "product_id": "chengxing_collab",
+    "name": "澄星协作"
+  },
+  "currency": "CNY",
+  "billing_unit": "seat_month",
+  "minor_units_per_major": 100,
+  "features": [
+    {"feature_id": "project_collaboration", "name": "任务与项目协作"},
+    {"feature_id": "basic_roles", "name": "基础成员角色"},
+    {"feature_id": "data_export", "name": "数据导出"},
+    {"feature_id": "api_access", "name": "产品 API"},
+    {"feature_id": "webhook_notifications", "name": "Webhook 通知"},
+    {"feature_id": "saml_sso", "name": "SAML SSO"},
+    {"feature_id": "audit_logs", "name": "审计日志"},
+    {"feature_id": "private_deployment", "name": "私有化部署"}
+  ],
+  "conditions": [
+    {
+      "condition_id": "saml_sso_compatible_idp",
+      "feature_id": "saml_sso",
+      "name": "兼容身份提供方前提",
+      "statement": "使用澄星协作的 SAML SSO 时，客户须明确确认已具备兼容的身份提供方。"
+    }
+  ],
+  "plans": [
+    {
+      "plan_id": "basic",
+      "name": "基础版 Basic",
+      "rank": 1,
+      "unit_price_minor": 4000,
+      "features": [
+        {"feature_id": "project_collaboration", "supported": true},
+        {"feature_id": "basic_roles", "supported": true},
+        {"feature_id": "data_export", "supported": true},
+        {"feature_id": "api_access", "supported": false},
+        {"feature_id": "webhook_notifications", "supported": false},
+        {"feature_id": "saml_sso", "supported": false},
+        {"feature_id": "audit_logs", "supported": false},
+        {"feature_id": "private_deployment", "supported": false}
+      ]
+    },
+    {
+      "plan_id": "team",
+      "name": "团队版 Team",
+      "rank": 2,
+      "unit_price_minor": 8000,
+      "features": [
+        {"feature_id": "project_collaboration", "supported": true},
+        {"feature_id": "basic_roles", "supported": true},
+        {"feature_id": "data_export", "supported": true},
+        {"feature_id": "api_access", "supported": true},
+        {"feature_id": "webhook_notifications", "supported": true},
+        {"feature_id": "saml_sso", "supported": false},
+        {"feature_id": "audit_logs", "supported": false},
+        {"feature_id": "private_deployment", "supported": false}
+      ]
+    },
+    {
+      "plan_id": "business",
+      "name": "企业版 Business",
+      "rank": 3,
+      "unit_price_minor": 12000,
+      "features": [
+        {"feature_id": "project_collaboration", "supported": true},
+        {"feature_id": "basic_roles", "supported": true},
+        {"feature_id": "data_export", "supported": true},
+        {"feature_id": "api_access", "supported": true},
+        {"feature_id": "webhook_notifications", "supported": true},
+        {"feature_id": "saml_sso", "supported": true, "condition_id": "saml_sso_compatible_idp"},
+        {"feature_id": "audit_logs", "supported": true},
+        {"feature_id": "private_deployment", "supported": false}
+      ]
+    }
+  ]
+}
