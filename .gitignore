@@ -1,3 +1,45 @@
-node_modules/
-dist/
+# Modified from sairam-s0/personal-ai-assistant for local presales files and resources.
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+**/credentials.json
+**/token.json
+**/oauth_state.json
+
+# Installed dependencies and generated caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+frontend/node_modules/
+frontend/dist/
 *.tsbuildinfo
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local runtime data; keep the formal knowledge index in the repository
+/data/*
+!/data/vector_store/
+/data/vector_store/*
+!/data/vector_store/chengxing_index.json
+
+# Databases and SQLite sidecar files
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+
+# Runtime output
+*.log
+*.pid
+*.stop
