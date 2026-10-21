@@ -1,0 +1,46 @@
+# Git 历史
+.git
+
+# 私人配置和凭据；保留公开配置示例
+**/.env
+**/.env.*
+!**/.env.example
+**/credentials.json
+**/token.json
+**/oauth_state.json
+
+# 本机安装的依赖和 Python 缓存
+**/.venv
+**/venv
+**/node_modules
+**/__pycache__
+**/*.py[cod]
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+
+# 本次运行不需要的开发资料
+frontend
+tests
+docs
+.idea
+.vscode
+**/.DS_Store
+**/Thumbs.db
+
+# 数据库和运行输出
+**/*.db
+**/*.db-*
+**/*.sqlite
+**/*.sqlite-*
+**/*.sqlite3
+**/*.sqlite3-*
+**/*.log
+**/*.pid
+**/*.stop
+
+# 排除本机运行数据，只保留正式知识索引
+data/*
+!data/vector_store/
+data/vector_store/*
+!data/vector_store/chengxing_index.json

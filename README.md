@@ -135,6 +135,81 @@ DEEPSEEK_TOOL_OUTPUT_MODE=deepseek_strict_beta
 
 索引核对涵盖资料、模型文件、依赖版本与表示配置；构建命令通过独立检查后才会替换正式索引。
 
+### Docker 本机运行
+
+这是独立于上文本地 Python 环境的运行方式：使用 Docker Desktop 的 **Linux 容器模式**和 Docker Compose，不需要在电脑上安装项目的 Python 依赖或 Node.js。以下命令均在**仓库根目录（包含 `Dockerfile` 和 `compose.yaml` 的目录）的 PowerShell** 中执行；无需先创建 `.venv` 或 `.env`。
+
+配置见 [Dockerfile](Dockerfile)、[.dockerignore](.dockerignore)、[compose.yaml](compose.yaml) 和 [requirements.docker.txt](requirements.docker.txt)。后者复用原依赖清单并固定 Linux 补充依赖 `uvloop==0.23.0`。应用保持单进程，使用仓库已有的前端构建和正式索引。
+
+#### 1. 构建镜像，准备缓存并检查索引
+
+正式版默认项目名为 `crispstar-formal`，镜像为 `crispstar-presales-assistant:docker-formal`，与旧练习资源分开。这一步不需要 DeepSeek API Key。
+
+若连接 `auth.docker.io` 超时，先检查 Docker Desktop 的代理配置；需要代理的网络还可为当前终端设置 `HTTP_PROXY` 和 `HTTPS_PROXY`，地址使用本机代理软件的实际入口。代理地址不写入公开 Docker 配置，变量说明见 [Docker CLI 文档](https://docs.docker.com/reference/cli/docker/#environment-variables)。
+
+```powershell
+docker compose config --quiet
+docker compose build app
+docker compose run --rm --no-deps app python -X utf8 -m scripts.check_embedding --timeout-seconds 600 --output /tmp/embedding-sample.json
+docker compose run --rm --no-deps app python -c "import tiktoken; encoding = tiktoken.get_encoding('cl100k_base'); assert encoding.encode('cache check'); print('cl100k_base ready')"
+docker compose run --rm --no-deps app python -X utf8 -m scripts.knowledge_index check --offline
+```
+
+首次模型准备从网络下载前文所述的固定 `bge-small-zh-v1.5` 快照；分词准备会下载 `cl100k_base` 数据。两类缓存均写入 Docker 数据卷。Embedding 小样写入容器临时目录；索引命令只核验现有正式索引，不重建或覆盖。任一步失败，先处理该步，再继续启动。
+
+随后使用同一个分词卷，在禁止联网的新容器中确认能够加载缓存；这条命令使用上述默认项目名对应的卷：
+
+```powershell
+docker run --rm --network none `
+  --mount type=volume,source=crispstar-formal_tiktoken-cache,target=/app/data/tiktoken `
+  crispstar-presales-assistant:docker-formal python -c "import tiktoken; encoding = tiktoken.get_encoding('cl100k_base'); assert encoding.encode('cache check'); print('cl100k_base offline ready')"
+```
+
+#### 2. 私下提供密钥并启动
+
+在同一个仓库根目录的 PowerShell 窗口中，隐藏输入自己的 DeepSeek API Key。以下方式只设置当前终端会话的环境变量，不把真实值写入项目文件或命令文本。新开终端后，启动或重建容器前需要重新提供密钥。
+
+```powershell
+$deepSeekSecret = Read-Host 'DeepSeek API Key' -AsSecureString
+$env:DEEPSEEK_API_KEY = [System.Net.NetworkCredential]::new('', $deepSeekSecret).Password
+Remove-Variable deepSeekSecret
+docker compose up -d --no-build
+docker compose ps
+docker compose logs --tail 50 app
+```
+
+默认模型为 `deepseek-flash`，工具输出模式为 `deepseek_strict_beta`；可在启动前用同名环境变量覆盖。仅有缓存不代表聊天可离线运行，真实聊天仍需有效密钥和 DeepSeek 网络连接。检查 Compose 配置时使用 `config --quiet`，避免把展开后的密钥输出到终端或聊天。
+
+打开 [http://127.0.0.1:8799/](http://127.0.0.1:8799/)，健康接口为 [http://127.0.0.1:8799/health](http://127.0.0.1:8799/health)。端口仅绑定本机；若有冲突，可在启动前设置 `$env:CRISPSTAR_PORT = '另一个空闲端口号'`，并相应调整访问地址。健康检查只确认 HTTP 服务可响应；还需实际检查页面、少量真实问答、引用及一份已保存草案。
+
+#### 3. 数据位置与保留数据重建
+
+| Docker 数据卷（默认项目名） | 容器内目录 | 内容 |
+| --- | --- | --- |
+| `crispstar-formal_database` | `/app/data/database` | SQLite 聊天及已保存草案 |
+| `crispstar-formal_embedding-models` | `/app/data/embedding_models` | 固定 Embedding 模型缓存 |
+| `crispstar-formal_tiktoken-cache` | `/app/data/tiktoken` | `cl100k_base` 分词缓存 |
+
+这些卷由 Docker 管理，不写回仓库源码目录；镜像已为运行用户准备可写目录。正式索引位于镜像内 `/app/data/vector_store/chengxing_index.json`，不挂载整个 `data` 目录。源码通过构建时复制进入镜像，修改后需要重新执行 `docker compose build app`，再执行 `docker compose up -d --no-build`。
+
+在页面保存聊天和测试草案后，可在同一个已配置密钥的仓库根目录终端中移除并重建容器，再回查原聊天和草案：
+
+```powershell
+docker compose down
+docker compose up -d --no-build
+```
+
+以上命令保留数据卷；保持相同项目名才能继续使用原卷。不要给 `down` 添加 `-v`，也不执行全局清理。当前任务和未提交草案保存在进程内，不属于重建后的持久化保证。
+
+**本轮 Docker 验证（2026-10-21）：** 在 Windows 上通过 Docker Desktop 的 Linux/amd64 环境完成以下检查，容器内为 CPython 3.11.17：
+
+- 镜像构建及 `pip check` 通过；应用以普通用户运行，三个数据卷均可写，正式索引与仓库文件的 SHA-256 一致。
+- 固定模型下载与真实 Embedding 小样通过；断网加载模型并核验 6 篇资料、24 个检索小节的正式索引通过；`cl100k_base` 在独立断网容器中加载通过。
+- 页面、静态资源和健康接口可访问。两条真实 DeepSeek 问答通过：SSO 前提回答的引用对应原文小节和行号；API＋Webhook、18 席、9 个月选出 Team，订阅基价为 12,960 元，并在页面保存一份测试草案。
+- 保留数据卷并强制重建容器后，1 个聊天、4 条消息、1 份草案仍可查回，消息内容和草案快照摘要一致；页面能够重新读取草案。内存中的当前业务需求未恢复，符合持久化边界。
+
+以上仅覆盖本机小规模部署与上述样例，不代表生产部署、跨机器验证、性能提升或任意表达的模型完成率；原有本地验证记录见下节。
+
 ### 开发与验证
 
 2026-10-18 的验证记录：**784 项 Python 定向检查通过，前端 141 项通过、2 项因外部响应夹具缺失跳过**；正常启动、页面及静态资源访问、本地检索和索引检查通过。
@@ -326,6 +401,81 @@ With a complete cache, check offline loading. After intentionally updating produ
 ```
 
 Index validation checks the corpus, model files, dependency versions, and representation settings. A build replaces the formal index only after an independent check succeeds.
+
+### Run locally with Docker
+
+This is an alternative to the local Python setup above. Use Docker Desktop in **Linux container mode** with Docker Compose; no project Python dependencies or Node.js installation is required on the host. Run every command below in **PowerShell at the repository root, containing `Dockerfile` and `compose.yaml`**. Creating a host `.venv` or `.env` is not required.
+
+See [Dockerfile](Dockerfile), [.dockerignore](.dockerignore), [compose.yaml](compose.yaml), and [requirements.docker.txt](requirements.docker.txt). The last file reuses the original dependency list and pins the additional Linux dependency `uvloop==0.23.0`. The application uses one server process, the included frontend build, and the formal index.
+
+#### 1. Build, prepare caches, and check the index
+
+The defaults are project `crispstar-formal` and image `crispstar-presales-assistant:docker-formal`, separate from earlier practice resources. No DeepSeek API key is needed for this step.
+
+If connecting to `auth.docker.io` times out, check Docker Desktop proxy settings. Networks requiring a proxy can also set `HTTP_PROXY` and `HTTPS_PROXY` for the current terminal, using the actual local proxy endpoint. No machine-specific proxy address is included in the public Docker configuration; see the [Docker CLI documentation](https://docs.docker.com/reference/cli/docker/#environment-variables).
+
+```powershell
+docker compose config --quiet
+docker compose build app
+docker compose run --rm --no-deps app python -X utf8 -m scripts.check_embedding --timeout-seconds 600 --output /tmp/embedding-sample.json
+docker compose run --rm --no-deps app python -c "import tiktoken; encoding = tiktoken.get_encoding('cl100k_base'); assert encoding.encode('cache check'); print('cl100k_base ready')"
+docker compose run --rm --no-deps app python -X utf8 -m scripts.knowledge_index check --offline
+```
+
+First-time preparation downloads the pinned `bge-small-zh-v1.5` snapshot described above and the `cl100k_base` tokenizer data into Docker volumes. The embedding sample goes to a temporary container directory. The index command checks the existing formal index without rebuilding or replacing it. Resolve any failed step before starting the application.
+
+Then confirm tokenizer loading in a new container with networking disabled. This command uses the volume belonging to the default project name above:
+
+```powershell
+docker run --rm --network none `
+  --mount type=volume,source=crispstar-formal_tiktoken-cache,target=/app/data/tiktoken `
+  crispstar-presales-assistant:docker-formal python -c "import tiktoken; encoding = tiktoken.get_encoding('cl100k_base'); assert encoding.encode('cache check'); print('cl100k_base offline ready')"
+```
+
+#### 2. Supply your key privately and start
+
+In the same repository-root PowerShell window, enter your own DeepSeek API key using hidden input. This sets an environment variable for the current terminal session without writing the real value into project files or command text. Supply the key again before starting or recreating containers from a new terminal.
+
+```powershell
+$deepSeekSecret = Read-Host 'DeepSeek API Key' -AsSecureString
+$env:DEEPSEEK_API_KEY = [System.Net.NetworkCredential]::new('', $deepSeekSecret).Password
+Remove-Variable deepSeekSecret
+docker compose up -d --no-build
+docker compose ps
+docker compose logs --tail 50 app
+```
+
+The defaults are `deepseek-flash` and `deepseek_strict_beta`; override the corresponding environment variables before startup if needed. Cached embeddings do not make chat offline: real chat still needs a valid key and network access to DeepSeek. Use `config --quiet` for Compose validation to avoid printing the resolved key into terminal or chat output.
+
+Open [http://127.0.0.1:8799/](http://127.0.0.1:8799/); the health endpoint is [http://127.0.0.1:8799/health](http://127.0.0.1:8799/health). The port binds only to localhost. For a conflict, set `$env:CRISPSTAR_PORT` to another available port before startup and adjust the URL. A passing health check establishes HTTP responsiveness only; also check the page, a few real questions, citations, and a saved test draft.
+
+#### 3. Data locations and container recreation
+
+| Docker volume with the default project name | Container directory | Contents |
+| --- | --- | --- |
+| `crispstar-formal_database` | `/app/data/database` | SQLite conversations and saved drafts |
+| `crispstar-formal_embedding-models` | `/app/data/embedding_models` | Pinned embedding model cache |
+| `crispstar-formal_tiktoken-cache` | `/app/data/tiktoken` | `cl100k_base` tokenizer cache |
+
+Docker manages these volumes outside the source checkout. The image prepares writable directories for the application user. The formal index remains at `/app/data/vector_store/chengxing_index.json` inside the image; the whole `data` directory is not mounted. Source code is copied at build time. After source changes, run `docker compose build app` followed by `docker compose up -d --no-build`.
+
+After saving a conversation and test draft in the UI, remove and recreate the container from the same repository-root terminal with the key configured, then retrieve the original records:
+
+```powershell
+docker compose down
+docker compose up -d --no-build
+```
+
+These commands preserve volumes. Keep the same project name to reuse them. Do not add `-v` to `down` or run global cleanup. Current tasks and unfinished drafts live in memory and are outside this persistence guarantee.
+
+**Docker verification on 2026-10-21:** The following checks passed in Docker Desktop's Linux/amd64 environment on Windows, using CPython 3.11.17 inside the container:
+
+- Image building and `pip check` passed. The application runs as a non-root user; all three volumes are writable, and the formal index SHA-256 matches the repository file.
+- The pinned model download and real embedding sample passed. With networking disabled, the model loaded and the formal index covering 6 documents and 24 retrieval sections passed validation. `cl100k_base` also loaded in a separate container with networking disabled.
+- The page, static assets, and health endpoint were accessible. Two real DeepSeek questions passed: SSO prerequisites cited the original sections and line numbers; API plus Webhook requirements for 18 seats over 9 months selected Team at CNY 12,960, and one test draft was saved through the UI.
+- After forcing container recreation while retaining volumes, 1 conversation, 4 messages, and 1 draft remained retrievable, with unchanged message-content and draft-snapshot digests. The UI retrieved the saved draft again. In-memory business requirements were not restored, matching the persistence boundary.
+
+This covers a small local deployment and the stated examples only. It does not establish production readiness, cross-machine compatibility, performance improvements, or a completion rate for arbitrary model inputs. Earlier local verification is recorded below.
 
 ### Development and verification
 

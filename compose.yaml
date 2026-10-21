@@ -1,0 +1,43 @@
+# 正式版使用独立项目名，避免复用旧练习的容器、网络和数据卷。
+name: crispstar-formal
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: crispstar-presales-assistant:docker-formal
+    # 这是本机构建的镜像，不从远程仓库拉取应用镜像。
+    pull_policy: never
+    init: true
+    ports:
+      - "127.0.0.1:${CRISPSTAR_PORT:-8799}:8000"
+    environment:
+      # 构建和缓存准备可以不提供密钥；真实聊天前须在本机终端设置。
+      DEEPSEEK_API_KEY: "${DEEPSEEK_API_KEY:-}"
+      DEEPSEEK_MODEL: "${DEEPSEEK_MODEL:-deepseek-flash}"
+      DEEPSEEK_TOOL_OUTPUT_MODE: "${DEEPSEEK_TOOL_OUTPUT_MODE:-deepseek_strict_beta}"
+      DEEPSEEK_MAX_CONTEXT_TOKENS: "${DEEPSEEK_MAX_CONTEXT_TOKENS:-90000}"
+      DEEPSEEK_DEFAULT_MAX_COMPLETION_TOKENS: "${DEEPSEEK_DEFAULT_MAX_COMPLETION_TOKENS:-2048}"
+      SAAS_DATABASE_URL: "sqlite:////app/data/database/saas_assistant.db"
+      EMBEDDING_CACHE_DIR: "/app/data/embedding_models"
+      EMBEDDING_THREADS: "2"
+      TIKTOKEN_CACHE_DIR: "/app/data/tiktoken"
+      APP_ENV: "docker-local"
+    volumes:
+      - database:/app/data/database
+      - embedding-models:/app/data/embedding_models
+      - tiktoken-cache:/app/data/tiktoken
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3).close()"]
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
+    stop_grace_period: 30s
+
+# 正式知识索引随镜像交付，不挂载整个 data 目录。
+volumes:
+  database: {}
+  embedding-models: {}
+  tiktoken-cache: {}
